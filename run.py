@@ -144,13 +144,7 @@ def main(args):
 
     print("========Preparing Model========")
     #model = MaxPool(k=args.k, dropout=True)
-    # model = AttFPNMIL(k=args.k)
-    # model = FPNMIL(k=args.k)
-    # model = FPNMIL_Mean(k=args.k)
-    # model = FPNMIL50(k=args.k)
-    #model = FPNMIL50naive(k=args.k)
-    # model = FPNMIL34naive(k=args.k)
-    model = FPNMIL_50_sum(k=args.k)
+    model = FPNMIL(k=args.k)
     model = model.to(device)
     if torch.cuda.device_count() > 1:
         model = nn.DataParallel(model)
